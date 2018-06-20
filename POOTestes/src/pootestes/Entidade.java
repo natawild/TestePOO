@@ -6,7 +6,9 @@
 package pootestes;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -41,12 +43,26 @@ public abstract class Entidade
      
    /*
      deverá calcular um Map de atividade para lista de atividades. 
+     exemplo: saude, [2, 4, 5,9] 
      */  
-     public Map <Atividade, List<Fatura>> porAtividade(){
+     public Map <Atividade, List<Fatura>> FaturasporAtividade(){
           Map <Atividade, List<Fatura>> faturasPorAtividade = new HashMap<>(); 
-          for (Atividade a : this.faturas.getAtividade())
+          List<Fatura> fat = new ArrayList<>(); 
+ 
           
+          for(Fatura f : this.faturas.values()){
+              fat.add(f); //listas de faturas 
+              
+              for (Atividade a : fat.get(f.getAtividade())){
+                  
+              }
+              
+              faturasPorAtividade.put(a, fat); 
+              
+          }
           return faturasPorAtividade; 
      }
+          
+                
 }
 
