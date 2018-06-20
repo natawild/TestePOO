@@ -5,6 +5,7 @@
  */
 package pootestes;
 
+import Pontos.Ponto;
 import java.time.LocalDate;
 
 /**
@@ -50,5 +51,10 @@ public class Fatura
      public Atividade getAtividade(){
         return this.atividade; 
     
+    }
+     
+      //clone
+    public Fatura clone (){
+        return new Fatura(this);    
     }
 }

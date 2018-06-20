@@ -21,6 +21,9 @@ public class Lampada {
     private double consumoParcial; 
     private int estado; 
     
+    public String getIdent(){
+        return this.ident; 
+    }
     
     public int getEstado(){
         return this.estado; 
