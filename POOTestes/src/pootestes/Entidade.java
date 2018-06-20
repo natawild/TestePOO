@@ -7,6 +7,7 @@ package pootestes;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,5 +38,15 @@ public abstract class Entidade
     
         return mapFaturas; 
     }
+     
+   /*
+     deverá calcular um Map de atividade para lista de atividades. 
+     */  
+     public Map <Atividade, List<Fatura>> porAtividade(){
+          Map <Atividade, List<Fatura>> faturasPorAtividade = new HashMap<>(); 
+          for (Atividade a : this.faturas.getAtividade())
+          
+          return faturasPorAtividade; 
+     }
 }
 

@@ -25,7 +25,7 @@ public class Negocio {
         FileWriter fw = new FileWriter (nomeFich);
         for(Contribuinte c : this.contribuintes.values()){ //contribuintes  
             for(Contribuinte cd : c.getDependentes()){//contribuinte com dependentes
-                FamiliaNumerosa f = (FamiliaNumerosa) cd; 
+                FamiliaNumerosa f = (FamiliaNumerosa) cd; //não sei o que isto faz mas eu queria o contribuinte fosse do tipo familia numerosa 
                 if(f instanceof Bonificado){
                     fw.write("Nome:"+ cd.getNome());
                     fw.write("NIf:"+ cd.getNome());
@@ -37,6 +37,17 @@ public class Negocio {
             }
        
         }
+        
+        
+    /*
+        Método que implemente a ordem natural de Fatura, em que se ordenam os elementos por ordem 
+        cresente da data
+        */
+    
+    
+    /*
+    
+    */
     
     }
 }
