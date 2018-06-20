@@ -40,9 +40,11 @@ public class Negocio {
         
         
     /*
-        Método que implemente a ordem natural de Fatura, em que se ordenam os elementos por ordem 
-        cresente da data
-        */
+     Método que implemente a ordem natural de Fatura, em que se ordenam os elementos por ordem 
+     cresente da data
+    */
+    
+    
     
     
     /*

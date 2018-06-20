@@ -47,22 +47,25 @@ public abstract class Entidade
      */  
      public Map <Atividade, List<Fatura>> FaturasporAtividade(){
           Map <Atividade, List<Fatura>> faturasPorAtividade = new HashMap<>(); 
-          List<Fatura> fat = new ArrayList<>(); 
- 
-          
-          for(Fatura f : this.faturas.values()){
-              fat.add(f); //listas de faturas 
-              
-              for (Atividade a : fat.get(f.getAtividade())){
-                  
-              }
-              
-              faturasPorAtividade.put(a, fat); 
-              
-          }
-          return faturasPorAtividade; 
-     }
-          
-                
+                for(Fatura f : this.faturas.values()){
+                    Atividade actividade = f.getAtividade();
+                    List<Fatura> fats = faturasPorAtividade.get(actividade);
+                    if(fats == null) { // inda nao tinhas encontrado esta atividade da lista, 
+                    //tens então que criar uma lista para esta actividade e adcionar aqui as faturas desta actividade
+                        fats = new ArrayList<Fatura>();
+	        	//agora que tens a lista criada para esta actividade. Adicionas a fatura
+	        	fats.add(f.clone()); 
+                        //por fim tens de adicionar a lista de faturas que criaste para esta atividade ao MAP
+	        	faturasPorAtividade.put(actividade, fats); 
+	        	}
+                    else { //a actividade da fatura que estas a ver neste momento ja entrei no if anterior. Ou seja a lista de 
+                        //faturas para esta actividade já foi criada
+                        //então so tens de adicionar mais um elmento a lista
+	        	fats.add(f.clone()); 
+                    }
+	          }
+	          return faturasPorAtividade; 
+	}
+                       
 }
 
